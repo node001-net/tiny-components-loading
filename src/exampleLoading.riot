@@ -4,9 +4,9 @@
             <input class="field-choice" type="checkbox" name="radio" value="true" onchange={ () => { handleSwitch() }  }>
             <span class="field-switch"></span>
         </label>
-        <div class="panel" if={ state.active }>
+        <div class="panel" if={ state.isActive }>
             <div class="panel__body">
-                <tiny-loading active={ state.active }></tiny-loading>
+                <tiny-loading active={ state.isActive }></tiny-loading>
             </div>
         </div>
     </div>
@@ -15,7 +15,7 @@
         export default {
 
             state: {
-                active: false
+                isActive: false
             },
 
             /**
@@ -24,10 +24,10 @@
              */
             handleSwitch()
             {
-                if (this.state.active === true) {
-                    this.state.active = false
+                if (this.state.isActive === true) {
+                    this.state.isActive = false
                 } else {
-                    this.state.active = true
+                    this.state.isActive = true
                 }
 
                 this.update()
